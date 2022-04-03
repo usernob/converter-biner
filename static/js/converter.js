@@ -30,10 +30,31 @@ class Converter {
     return result;
   }
   oktal_to_desimal(){
-    
+    let result = 0;
+    for(let i = 0; i < this.num.length; i++){
+      result += this.num[i] * 8 ** (this.num.length - i - 1)
+    }
+    return result;
   }
   heksa_to_desimal(){
-    
+    let result = 0;
+    let data = {
+      'A':10,
+      'B':11,
+      'C':12,
+      'D':13,
+      'E':14,
+      'F':15
+    }
+    for(let i = 0; i < this.num.length; i++){
+      if(this.num[i].toUpperCase() in data){
+        result += data[this.num[i].toUpperCase()] * 16 ** (this.num.length - i -1)
+      }
+      else {
+        result += this.num[i] * 16 ** (this.num.length - i - 1)
+      }
+    }
+    return result;
   }
   get biner(){
     let desimal = this.desimal;
@@ -45,10 +66,29 @@ class Converter {
     return result;
   }
   get oktal(){
-    
+    let desimal = this.desimal;
+    let result = '';
+    while(desimal > 0){
+      result = (desimal % 8) + result;
+      desimal = parseInt(desimal / 8);
+    }
+    return result;
   }
   get heksadesimal(){
-    
+    let desimal = this.desimal;
+    let result = '';
+    let x;
+    while(desimal > 0){
+      x = desimal % 16
+      if(x >= 10){
+        result = String.fromCodePoint(55 + x) + result
+      }
+      else {
+        result = x + result;
+      }
+      desimal = parseInt(desimal / 16);
+    }
+    return result;
   }
   get array(){
     return [
@@ -60,5 +100,5 @@ class Converter {
   }
 }
 
-//let test = new Converter('8','desimal')
-//console.log(test.biner)
+//let test = new Converter('7a','heksadesimal')
+//console.log(test.array)
