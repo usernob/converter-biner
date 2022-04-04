@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>converter biner,oktal,and heksadimal</title>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  </head>
+  <body>
+    <div id="content">
+      <div id="converter">
+        <div class="input_field">
+          <input type="text" name="num" id="num" placeholder="masukkan nilai" onkeyup="convert()"/>
+          <select name="typeList" id="typeList" onchange="convert()">
+            <option value="desimal">desimal</option>
+            <option value="biner">biner</option>
+            <option value="oktal">oktal</option>
+            <option value="heksadesimal">heksadesimal</option>
+          </select>
+        </div>
+        <div id="result">
+          <h4 class="result_type">desimal</h4>
+          <p class="result_value"></p>
+          <h4 class="result_type">biner</h4>
+          <p class="result_value"></p>
+          <h4 class="result_type">oktal</h4>
+          <p class="result_value"></p>
+          <h4 class="result_type">heksadesimal</h4>
+          <p class="result_value"></p>
+        </div>
+      </div>
+    </div>
+    <script src="static/js/converter.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
