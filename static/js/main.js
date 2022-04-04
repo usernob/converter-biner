@@ -4,7 +4,7 @@ function convert(){
     desimal: "^[0-9]+$",
     biner: "^[01]+$",
     oktal: "^[0-7]+$",
-    heksadesimal: "^[1-9A-Fa-f]+$"
+    heksadesimal: "^[0-9A-Fa-f]+$"
   }
   let content = document.getElementsByClassName('result_value')
   let type = document.getElementById('typeList').value
